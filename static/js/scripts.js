@@ -11,7 +11,7 @@ console.log(document.querySelector('.guess').value);
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
-let highscore = 0;
+let highscore = parseInt(document.querySelector('.highscore').textContent)
 
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
@@ -29,7 +29,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // When player wins
   } else if (guess === secretNumber) {
     // document.querySelector('.message').textContent = '🎉 Correct Number!';
-    displayMessage('🎉 Correct Number!');
+    displayMessage('🍔 BORGOR 🍔');
     document.querySelector('.number').textContent = secretNumber;
 
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -50,7 +50,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       // document.querySelector('.message').textContent = '💥 You lost the game!';
-      displayMessage('💥 You lost the game!');
+      displayMessage('💥 No Borgor');
       document.querySelector('.score').textContent = 0;
     }
   }
